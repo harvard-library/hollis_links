@@ -1,6 +1,6 @@
 Metadata = Struct.new(:ext_id, :ext_id_type, :body, :title, :author, :publication) do
 # a non-persistant view of metadata
-  attr_reader :body, :title, :author, :publication
+#  attr_reader :body, :title, :author, :publication
   def initialize(opts, *more)
     if more.length == 0 then
       case
@@ -169,7 +169,7 @@ Metadata = Struct.new(:ext_id, :ext_id_type, :body, :title, :author, :publicatio
   end
 
   def populate
-    md = JSON.parse(body)['mods']
+    md = JSON.parse(self.body)['mods']
     self.title = process_title_field(md['titleInfo'], md['note']) if md['titleInfo']
     self.author = process_name_field(md['name']) if md['name']
     self.publication = process_pub_field(md['originInfo']) if md['originInfo']
