@@ -93,7 +93,7 @@ class LinkList < ActiveRecord::Base
     when key.blank?
     # Nothing
     else
-      self.comment = "#{self.comment}\n#{key} #{content}".lstrip
+      self.comment = "#{self.comment}<b>#{key}</b> #{content}<br>".lstrip
     end
   end
 

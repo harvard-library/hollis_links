@@ -112,6 +112,10 @@ class LinkListsController < ApplicationController
     @link_list = LinkList.find_by!(split_qualified_id(params[:qualified_id]))
     @link_list.last_touched_by = current_user.email
     @link_list.attributes = link_list_params
+    unless @link_list.comment.blank?
+      # strip space/<br> trailing comment content
+      @link_list.comment = @link_list.comment.sub(/(<br>|\s)+\z/, '')
+    end
 
     if @link_list.save
       flash[:notice] = "#{@link_list.ext_id} updated successfully!"
