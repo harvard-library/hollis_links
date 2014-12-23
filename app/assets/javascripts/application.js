@@ -17,4 +17,6 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require cocoon
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales
 //= require_tree .

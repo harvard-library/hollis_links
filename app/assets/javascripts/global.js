@@ -11,6 +11,11 @@ $(function () {
   $(document).on('ready page:receive', function () {
     clearTimeout(spinnerTimeout);
     $('#tl-loading-spinner').remove();
-
   });
+
+  $(document).on('ready page:load', function(){
+    window['rangy'].initialized = false
+    $('.wysiwig').wysihtml5();
+  });
+
 });

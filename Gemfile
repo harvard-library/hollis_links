@@ -26,6 +26,7 @@ gem 'cocoon'
 gem 'dotenv-deployment'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'bootstrap-wysihtml5-rails'
 
 group :development do
   gem 'spring'
