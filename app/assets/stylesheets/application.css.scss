@@ -1,3 +1,7 @@
+/*
+ *= require bootstrap-wysihtml5
+ */
+
 @import "harvard";
 
 $link-color: $bluebonnet;
@@ -10,4 +14,3 @@ $text-color: $ink;
 @import "global";
 @import "link_lists";
 @import "users";
-@import "bootstrap-wysihtml5/bootstrap3-wysihtml5.css";
