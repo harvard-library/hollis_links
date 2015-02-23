@@ -18,6 +18,7 @@ class LinkList < ActiveRecord::Base
 
   validates :ext_id, :presence => true
   validates :ext_id_type, :presence => true, :inclusion => MetadataSources.keys
+  validates :ext_id, :uniqueness => {:scope => :ext_id_type, :message => "External ID must be unique per External ID type."}
 
   mount_uploader :image, ImageUploader
 

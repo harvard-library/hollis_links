@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150113140215) do
+ActiveRecord::Schema.define(version: 20150223150654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20150113140215) do
     t.string   "image"
     t.integer  "links_count",       default: 0,        null: false
   end
+
+  add_index "link_lists", ["ext_id_type", "ext_id"], name: "index_link_lists_on_ext_id_type_and_ext_id", unique: true, using: :btree
 
   create_table "links", force: true do |t|
     t.integer "position",     null: false

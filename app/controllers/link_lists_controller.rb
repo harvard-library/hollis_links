@@ -1,5 +1,12 @@
 class LinkListsController < ApplicationController
   before_action :authenticate_login!, :except => [:index, :show, :meta]
+  rescue_from ActiveRecord::RecordNotUnique, :with => ->(e) {
+    @link_list.errors["ext_id"] = "External ID must be unique per External ID type."
+    flash.now[:error] = "An error has occurred."
+    respond_to do |format|
+      format.html { render :action => "new"}
+    end
+  }
 
   #### Collection actions
 
@@ -20,10 +27,16 @@ class LinkListsController < ApplicationController
   def create
     @link_list = LinkList.new(link_list_params)
     @link_list.last_touched_by = current_user.email
+
     if @link_list.save
       flash[:notice] = "#{@link_list.ext_id} created successfully!"
       respond_to do |format|
         format.html { redirect_to @link_list }
+      end
+    else
+      flash.now[:error] = "An error has occurred."
+      respond_to do |format|
+        format.html { render :action => "new"}
       end
     end
   end
