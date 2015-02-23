@@ -23,10 +23,16 @@ class LinkListTest < ActiveSupport::TestCase
     assert me.save, "failed to save successfully"
   end
 
-  test "fetches metadata" do
+  test "disallows creation of records with same ext_id_type:ext_id" do
     filename = Dir.glob(File.join('test', 'data', '*.csv')).first
     me = LinkList.import_csv(CSV.read(filename))
-    me.fetch_metadata
-    assert me.cached_metadata, "metadata does not exist"
+    thee = LinkList.import_csv(CSV.read(filename))
+    assert me.save
+    begin
+      thee.save!
+    rescue ActiveRecord::RecordInvalid => e
+      assert_not thee.persisted?, "should not be able to save record"
+    end
+    assert thee.errors.has_key?(:ext_id), "should have an error on `ext_id`"
   end
 end
