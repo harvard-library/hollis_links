@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.7.1'
 gem 'pg', :platforms => [:ruby, :mswin]
 platforms :jruby do
   gem 'activerecord-jdbcpostgresql-adapter'
@@ -18,7 +17,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'roo'
 gem 'acts_as_list'
 gem 'httparty'
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'formtastic', '~> 2.1' # Ye Olde Formtastic because formtastic bootstrap doesn't work with formtastic 3 re: https://github.com/mjbellantoni/formtastic-bootstrap/issues/109
 gem 'formtastic-bootstrap'
