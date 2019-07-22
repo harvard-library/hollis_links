@@ -29,7 +29,7 @@ gem 'font-awesome-sass'
 
 group :development do
   gem 'spring'
-  gem 'capistrano', '3.1.0'
+  gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
