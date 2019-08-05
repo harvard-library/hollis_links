@@ -65,7 +65,8 @@ class LinkList < ActiveRecord::Base
 
   # Get URL for bibliographic record based on template
   def url
-    Erubis::Eruby
+    #Erubis::Eruby
+    Erubi::Engine
       .new(MetadataSources[ext_id_type]['templates']['record_url'])
       .result(:ext_id => ext_id, :ext_id_type => ext_id_type)
   end
