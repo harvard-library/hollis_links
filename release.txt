@@ -1,6 +1,6 @@
 RELEASE NOTES
 
-2.0.11 (07/22/2019) VC
+2.0.11 (08/13/2019) VC
 -- Updates to vulnerabilities:
    - rails (CVE-2019-5418/9)
    - actionview (CVE-2019-5418)
@@ -11,6 +11,9 @@ RELEASE NOTES
    - bootstrap-sass (CVE-2019-8331)
    - rack (CVE-2018-16471)
    - loofah (CVE-2018-16468)
+-- Update to Font Awesome 5+
+-- Update to JRuby 9.2.7.0
+-- Update to Node v10.16.0
 
 2.0.10 (04/12/2018) VC
 -- Updates to vulnerabilities:
