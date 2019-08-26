@@ -6,7 +6,7 @@ RELEASE NOTES
    - actionview (CVE-2019-5418)
    - mini_magick (CVE-2019-13574)
    - yard (GHSA-xfhh-rx56-rxcr)
-   - nokogiri (CVE-2018-14404)
+   - nokogiri (CVE-2018-14404/CVE-2019-5477)
    - devise (CVE-2019-5421)
    - bootstrap-sass (CVE-2019-8331)
    - rack (CVE-2018-16471)
