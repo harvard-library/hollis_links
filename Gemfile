@@ -7,7 +7,7 @@ platforms :jruby do
   gem 'warbler'
 end
 
-gem 'sass-rails'
+gem 'sass-rails', '>= 5'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -30,10 +30,6 @@ gem 'actionmailer'
 
 group :development do
   gem 'spring'
-  gem 'capistrano'
-  gem 'capistrano-rails'
-  gem 'capistrano-rvm'
-  gem 'capistrano-bundler'
   gem 'better_errors', :platforms => :ruby
   gem 'binding_of_caller', :platforms => :ruby
 end

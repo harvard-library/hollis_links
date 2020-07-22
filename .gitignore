@@ -37,3 +37,5 @@
 .DS_Store
 /.project
 /release.txt
+/webapp.conf
+/drs2keys/

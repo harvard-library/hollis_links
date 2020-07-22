@@ -1,4 +1,4 @@
-class CreateLinkList < ActiveRecord::Migration
+class CreateLinkList < ActiveRecord::Migration[4.2]
   def change
     create_table :link_lists do |t|
       t.string :ext_id, :null => false

@@ -1,4 +1,4 @@
-class CreateLink < ActiveRecord::Migration
+class CreateLink < ActiveRecord::Migration[4.2]
   def change
     create_table :links do |t|
       t.integer :position, :null => false

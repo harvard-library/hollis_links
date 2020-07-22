@@ -1,4 +1,4 @@
-class AddMetadataColumnsToLinkList < ActiveRecord::Migration
+class AddMetadataColumnsToLinkList < ActiveRecord::Migration[4.2]
   def change
     add_column :link_lists, :title, :text
     add_column :link_lists, :author, :text

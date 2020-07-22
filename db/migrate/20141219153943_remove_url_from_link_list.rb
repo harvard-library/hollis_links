@@ -1,4 +1,4 @@
-class RemoveUrlFromLinkList < ActiveRecord::Migration
+class RemoveUrlFromLinkList < ActiveRecord::Migration[4.2]
   class LinkList < ActiveRecord::Base
     # empty class to guard against AR shenanigans in migration
   end

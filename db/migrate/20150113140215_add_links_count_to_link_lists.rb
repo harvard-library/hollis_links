@@ -1,4 +1,4 @@
-class AddLinksCountToLinkLists < ActiveRecord::Migration
+class AddLinksCountToLinkLists < ActiveRecord::Migration[4.2]
 
   def change
     add_index :links, :link_list_id

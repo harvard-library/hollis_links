@@ -11,6 +11,8 @@ Rails.application.configure do
   # just for the purpose of running a single test. If you are using a tool that
   # preloads Rails for running tests, you may have to set it to true.
   config.eager_load = false
+  
+  config.log_level = ENV["LOG_LEVEL"] || :info
 
   # Configure static asset server for tests with Cache-Control for performance.
   config.serve_static_assets  = true
@@ -29,7 +31,15 @@ Rails.application.configure do
   # Tell Action Mailer not to deliver emails to the real world.
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
-  config.action_mailer.delivery_method = :test
+  #config.action_mailer.delivery_method = :test
+  
+  config.action_mailer.default_url_options = { host: ENV["EMAIL_LINK_DOMAIN"], port: ENV["EMAIL_LINK_PORT"] }
+  config.action_mailer.smtp_settings = {
+        :enable_starttls_auto => false,
+        :address            => ENV["EMAIL_HOST"],
+        :port               => ENV["EMAIL_PORT"],
+        :tls                  => false
+  }
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr

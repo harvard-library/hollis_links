@@ -54,4 +54,19 @@ namespace :hl do
       Password: #{password}
     DISPLAY
   end
+  
+  desc "Create an local admin user for the app."
+  task :localadmin => :environment do
+    if User.count == 0
+    User.create!(:email => "admin@listview.com", :password => 'admin1234')
+	    puts <<-DISPLAY
+	      Admin account created!
+	      ======================
+	      Email:    admin@listview.com
+	      Password: admin1234
+	    DISPLAY
+	else
+		puts "Already users in the DB, will not re-create a local admin" 
+    end
+  end
 end

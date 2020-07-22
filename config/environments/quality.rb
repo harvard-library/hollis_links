@@ -42,7 +42,7 @@ Rails.application.configure do
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
-  config.log_level = :info
+  config.log_level = ENV["LOG_LEVEL"] || :info
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -59,6 +59,14 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
+    
+  config.action_mailer.default_url_options = { host: ENV["EMAIL_LINK_DOMAIN"], port: ENV["EMAIL_LINK_PORT"] }
+  config.action_mailer.smtp_settings = {
+      :enable_starttls_auto => false,
+      :address            => ENV["EMAIL_HOST"],
+      :port               => ENV["EMAIL_PORT"],
+      :tls                  => false
+  }
 
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
