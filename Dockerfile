@@ -1,10 +1,14 @@
 ### Server ###
 
 #https://github.com/phusion/passenger-docker
-FROM phusion/passenger-ruby26
+FROM phusion/passenger-jruby92
 
 # Set correct environment variables.
 ENV DEBIAN_FRONTEND noninteractive
+
+#Change the user ID to 9902 because that is also the listviewadm user
+#This allows log file writing.
+RUN usermod -u 9902 app && groupmod -g 199 app
 
 #From the docs: The image has an app user and home directory 
 # /home/app. Your application is supposed to run as this user.

@@ -1,9 +1,12 @@
 #Rails environment
 RAILS_ENV=<railsenv>
 
+ROOT_URL=<root url for List View with no http or https>
+
 #This is required by QA and prod to run properly.  Run the command 'rake secret'
 #and it will generate a randomized secret key.
 SECRET_KEY_BASE=<run 'rake secret' and place here in qa and prod>
+DEVISE_SECRET_KEY=<another secret key>
 
 #PGSQL 
 DATABASE_NAME=<dbname>

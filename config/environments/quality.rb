@@ -100,4 +100,7 @@ Rails.application.configure do
 
   # configure time zone
   config.time_zone = 'Eastern Time (US & Canada)'
+  
+  # Config Harvard for approval urls for qa (Rails 6 requirement)
+  config.hosts << ".harvard.edu"
 end

@@ -91,4 +91,7 @@ Rails.application.configure do
   config.to_prepare { Devise::SessionsController.force_ssl }
   config.to_prepare { Devise::RegistrationsController.force_ssl }
   config.to_prepare { Devise::PasswordsController.force_ssl }
+    
+  # Config Harvard for approval urls for prod (Rails 6 requirement)
+  config.hosts << ".harvard.edu"
 end
